@@ -1,4 +1,4 @@
-import 'package:bloc_rest_example/homepage.dart';
+import 'package:bloc_rest_example/presentation/home/homepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {

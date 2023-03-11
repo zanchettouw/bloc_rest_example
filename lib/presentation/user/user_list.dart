@@ -1,34 +1,16 @@
-import 'package:bloc_rest_example/blocs/app_blocs.dart';
-import 'package:bloc_rest_example/blocs/app_events.dart';
-import 'package:bloc_rest_example/blocs/app_states.dart';
+import 'package:bloc_rest_example/blocs/user_bloc/user_blocs.dart';
+import 'package:bloc_rest_example/blocs/user_bloc/user_events.dart';
+import 'package:bloc_rest_example/blocs/user_bloc/user_states.dart';
 import 'package:bloc_rest_example/models/user_model.dart';
 import 'package:bloc_rest_example/repo/repositories.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class UserList extends StatelessWidget {
+  const UserList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<UserBloc>(
-          create: (BuildContext context) => UserBloc(
-            UserRepository(),
-          ),
-        ),
-      ],
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('The BloC App'),
-        ),
-        body: blocBody(),
-      ),
-    );
-  }
-
-  Widget blocBody() {
     return BlocProvider(
       create: (context) => UserBloc(
         UserRepository(),
@@ -71,8 +53,9 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         leading: CircleAvatar(
-                          backgroundImage:
-                              NetworkImage(userList[index].avatar.toString()),
+                          backgroundImage: NetworkImage(
+                            userList[index].avatar.toString(),
+                          ),
                         ),
                       ),
                     ),

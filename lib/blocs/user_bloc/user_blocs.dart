@@ -1,5 +1,5 @@
-import 'package:bloc_rest_example/blocs/app_events.dart';
-import 'package:bloc_rest_example/blocs/app_states.dart';
+import 'package:bloc_rest_example/blocs/user_bloc/user_events.dart';
+import 'package:bloc_rest_example/blocs/user_bloc/user_states.dart';
 import 'package:bloc_rest_example/repo/repositories.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
